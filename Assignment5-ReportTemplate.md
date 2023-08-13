@@ -15,6 +15,22 @@
 
 # Assessment Using Reliability Growth Testing 
 
+## Result of model comparison
+The top two models were ABC.  We selected them using ABC.
+
+
+## Result of range analysis
+XYZ
+
+## Plots for failure rate and reliability of the SUT for the test data provided
+
+
+## Discussion on Decision Making given a Target Failure  Rate
+
+
+## Discussion on the Advantages and Disadvantages of Reliability Growth Analysis
+
+
 # Assessment Using Reliability Demonstration Chart 
 
 # 
