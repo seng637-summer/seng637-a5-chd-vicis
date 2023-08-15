@@ -74,7 +74,9 @@ To determine the optimal range, the team employed the arithmetic mean test. This
 ## Plots for failure rate
 
 MVF Graph - Full Set
+
 <img src="https://github.com/seng637-summer/seng637-a5-chd-vicis/blob/main/media/fullset.png" alt="MVF Graph - Full Set" width="641" /><br>
+
 
 Intensity Graph - Full Set
 
