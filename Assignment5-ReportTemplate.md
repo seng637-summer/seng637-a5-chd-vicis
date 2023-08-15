@@ -22,7 +22,7 @@ The team utilized both the C-SFRAT and SRTAT programs to generate reliability ou
 ## Result of model comparison
 Of the models assessed using C-SFRAT, the top two were the Discrete Weibull type III and Geometric model, both using the covariance F. To determine the optimal models, all models with all covariates were executed, and the two models with the lowest AIC (Akaike information criterion) and BIC (Bayesian information criterion) values were chosen.  The rationale for utilizing AIC and BIC, instead of solely relying on SSE (sum of squared estimate of errors) or PSSE (predictive sum of squares error), stems from their suitability for model selection. Both AIC and BIC are explicitly tailored for this purpose, taking into account the complexity of the model, a feature SSE and PSSE lacks (AIC and BIC penalize for model complexity, so there is less chance of overfitting).  The distinction between AIC and BIC is in their treatment of model complexity. BIC applies a more stringent penalty for model complexity, leading it to favor simpler models over AIC. For a more thorough understanding of the contrast between AIC and BIC, refer to this [link](https://vitalflux.com/aic-vs-bic-for-regression-models-formula-examples/).
 
-The AIC for Discrete Weibull type III and thet Geometric model were 122.199 and 125.323 respectively while the BIC was 127.935 and 129.625 for the Discrete Weibull type III and thet Geometric model respectively.
+The AIC for the Discrete Weibull type III and Geometric models were 122.199 and 125.323 respectively while the BIC was 127.935 and 129.625 for the Discrete Weibull type III and thet Geometric models respectively.
 
 Results and Statistics
 | Model   | MTTF| Failure Rate|
@@ -35,7 +35,7 @@ Results and Statistics
 | Geometric (subset, effort per interval = 0)                  |  a            | a|
 
 ## Result of range analysis
-In order to select the best range the team used the arithmetical mean test to select which subset of data has an increasing reliability, as reliability models should only be used on data where the overall reliability is increasing as testing continues.  By plotting the time interval and cumulative errors and then calculating the inter-failure time assuming an even distribution amoungst each interval it is very obvious when the reliability growth increases or decreases.  As can be seen in the table below the reliabilty growth increaes from 1-18, after which is decreases from 19-24 and then eventually increases again  25-31, so for this assignment the subset of data selected is from 1-18 or 25-31.  Unfortunetly the C-SFRAT software does not appear to be flexible enough to trend subsets that don't start from time interval 0 as many errors occured see [here]().
+To determine the optimal range, the team employed the arithmetic mean test. This test helped identify a subset of data with consistently improving reliability. As mentioned in the lecture notes, it's important to apply reliability models exclusively to data showing a consistent increase in reliability during testing.  The approach involved creating a graph displaying time intervals and cumulative errors. By calculating inter-failure times with the assumption of an even distribution across each interval, it became clear when reliability growth was on the rise or decline.  The data table below demonstrates this pattern. Reliability growth is evident from intervals 1 to 18, followed by a decline from intervals 19 to 24, and a subsequent increase from intervals 25 to 31. Therefore, for this task, the chosen data subset comprises intervals 1 to 18 and 25 to 31. Unfortunately, the C-SFRAT software lacks the flexibility to analyze subsets that don't initiate from time interval 0 due to several errors encountered [here]().
 
 | Time Interval | Cumulative Failure Count | Arithmetical mean|
 |--|--|--|
@@ -73,8 +73,15 @@ In order to select the best range the team used the arithmetical mean test to se
 
 ## Plots for failure rate
 
+MVF Graph - Full Set
+<img src="https://github.com/seng637-summer/seng637-a5-chd-vicis/blob/main/media/fullset.png" alt="MVF Graph - Full Set" width="641" /><br>
 
-Figure
+Intensity Graph - Full Set
+
+MVF Graph - Subset with increasing Reliabilty
+
+Intensity Graph - Subset with increasing Reliabilty
+
 
 
 ## Discussion on Decision Making given a Target Failure Rate
