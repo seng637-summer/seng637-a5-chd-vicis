@@ -67,7 +67,7 @@ In order to select the best range the team used the arithmetical mean test to se
 |31|92|0.34|
 
 ## Plots for failure rate
-and reliability of the SUT for the test data provided
+Need to add...
 
 
 ## Discussion on Decision Making given a Target Failure Rate
