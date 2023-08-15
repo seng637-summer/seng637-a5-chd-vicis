@@ -11,26 +11,29 @@
 | Christopher DiMattia                |
 
 # Introduction
-In this assignment the team explored and learned about relability testing by practising with reliability assement tools and assessed hypoetheical intergretation testing data using both reliability growth testing and reliability assuessesment using a reliability demonstration chart (RDC).  The team successfully assessed the reliability of the system with the finding detailed below.
+In this assignment the team explored and learned about dependability and relability testing software systems.  The team gained hands-on experience by utilizing reliability assessment tools and evaluating hypothetical interpretation testing data. This evaluation encompassed both reliability growth testing and reliability assessment, employing a reliability demonstration chart (RDC). The team achieved a successful assessment of the system's reliability, and the resulting findings are elaborated below.
+
 
 # Assessment Using Reliability Growth Testing 
 
-The team used both the C-SFRAT and SRTAT programs to generate reliability results and found that C-SFRAT was the better choice because it was easier to use.  While both were easy to use C-SFRAT did not have any issues on startup whereas SRTAT required that the csv file be reformatted to a "txt".  It was also noted that SRTAT did not work and had multiple errors when running such as "Can't load AMD 64-bit.dll on a IA 32-bit platform" and other such errors despite selecting the correct platform and even trying different platforms (32 and 64 bit windows).
+The team utilized both the C-SFRAT and SRTAT programs to generate reliability outcomes. They determined that C-SFRAT stood out as the preferable choice due to its user-friendly nature. While both programs were user-friendly, C-SFRAT distinguished itself by not encountering any startup issues. In contrast, SRTAT necessitated reformatting the CSV file into a text file before it could be initiated.  It was also noticed by several members that SRTAT encountered errors during execution. These included errors such as "Can't load AMD 64-bit.dll on an IA 32-bit platform" and other similar errors. These errors persisted despite selecting the correct platform and even attempting various platforms (32 and 64-bit Windows).
 
 
 ## Result of model comparison
-The top two models using C-SFRAT were Discrete Weibull type III and Geometric, both with coevariance F.  In order to determine which models were the best, all the models with all covariates were run and the two models with the smallest AIC (Akaike information criterion) and BIC (Bayesian information criterion) were selected.  The reason the team used AIC And BIC instead of just SSE (sum of squared estiamte of errors)  is becuase AIC and BIC are specifically designed for model selection and they both account for model complexity whereas SSE does not.  The difference between AIC and BIC is that BIC has a stronger penalty for model complexity so it will genearlly prefer simpler models than AIC.  A deeper explaination of the difference bet AIC And BIC can be found [here](https://vitalflux.com/aic-vs-bic-for-regression-models-formula-examples/).
-
+Of the models assessed using C-SFRAT, the top two were the Discrete Weibull type III and Geometric model, both using the covariance F. To determine the optimal models, all models with all covariates were executed, and the two models with the lowest AIC (Akaike information criterion) and BIC (Bayesian information criterion) values were chosen.  The rationale for utilizing AIC and BIC, instead of solely relying on SSE (sum of squared estimate of errors) or PSSE (predictive sum of squares error), stems from their suitability for model selection. Both AIC and BIC are explicitly tailored for this purpose, taking into account the complexity of the model, a feature SSE and PSSE lacks (AIC and BIC penalize for model complexity, so there is less chance of overfitting).  The distinction between AIC and BIC is in their treatment of model complexity. BIC applies a more stringent penalty for model complexity, leading it to favor simpler models over AIC. For a more thorough understanding of the contrast between AIC and BIC, refer to this [link](https://vitalflux.com/aic-vs-bic-for-regression-models-formula-examples/).
 
 Results and Statistics
 | Model   | MTTF| Failure Rate|
 |-----------------|---|---|
 | Data                       | 31/92 = 0.337 |    92/31 = 2.968 |
-| Discrete Weibull type III  |  a            | a |
-| Geometric                  |  a            | a|
+| Discrete Weibull type III (all data)  | 31/92 = 0.337 |    92/31 = 2.968 |
+| Geometric (all data)                  |  31/92 = 0.337 |    92/31 = 2.968 |
+| Discrete Weibull type III (subset, effort per interval = 36)  |  31/92.922 = 0.334            | 92.922/31 = 3.00 |
+| Discrete Weibull type III (subset, effort per interval = 0)  |  31/92.922 = 0.334            | 92.922/31 = 3.00 |
+| Geometric (subset, effort per interval = 0)                  |  a            | a|
 
 ## Result of range analysis
-In order to select the best range the team used the arithmetical mean test to select which subset of data has an increasing reliability, as reliability models should only be used on data where the overall reliability is increasing as testing continues.  By plotting the time interval and cumulative errors and then calculating the inter-failure time assuming an even distribution amoungst each interval it is very obvious when the reliability growth increases or decreases.  As can be seen in the table below the reliabilty growth increaes from 1-18, after which is decreases and then eventually increases again, so for this assignment the subset of data selected is from 1-18.
+In order to select the best range the team used the arithmetical mean test to select which subset of data has an increasing reliability, as reliability models should only be used on data where the overall reliability is increasing as testing continues.  By plotting the time interval and cumulative errors and then calculating the inter-failure time assuming an even distribution amoungst each interval it is very obvious when the reliability growth increases or decreases.  As can be seen in the table below the reliabilty growth increaes from 1-18, after which is decreases from 19-24 and then eventually increases again  25-31, so for this assignment the subset of data selected is from 1-18 or 25-31.  Unfortunetly the C-SFRAT software does not appear to be flexible enough to trend subsets that don't start from time interval 0 as many errors occured see [here]().
 
 | Time Interval | Cumulative Failure Count | Arithmetical mean|
 |--|--|--|
@@ -67,7 +70,9 @@ In order to select the best range the team used the arithmetical mean test to se
 |31|92|0.34|
 
 ## Plots for failure rate
-Need to add...
+
+
+Figure
 
 
 ## Discussion on Decision Making given a Target Failure Rate
