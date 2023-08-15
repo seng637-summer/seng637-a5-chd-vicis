@@ -155,6 +155,15 @@ Disadvantages
 3. **Possibility of Incorrect Parameters**: The decision to accept or reject a system depends on the risk thresholds set by the producer. Incorrectly set parameters might lead to wrong decisions such as rejecting a satisfactory system or accepting an unsatisfactory one.
 
 # Comparison of Results
-
+As is evident from the results of both sections, the minimum MTTF is far below that which is found during the reliability growth testing (0.0413 vs 0.337 or 0.657) and even when the FIO was adjusted and a corresponding MTTF increased to 0.0823 it was still well below what was found during the reliability growth testing, so in general it would appear the SUT and testing is acceptable (well within the accept region and it will reach it's failure intensity objective).  Both types of analysis also demonstrated similar conclusions in that the reliability growth testing showed clear signs of increasing reliability with the exception of a single section in the middle, while the RDC showed a similar trend and how it's trending in the acceptable range. 
 
 # Discussion on Similarity and Differences of the Two Techniques
+The two techniques are similar in that both are directly related to assessing and improving the reliability of software and they are both ways to visually see if a system is becoming more or less reliable, but they have a somewhat different focus.  Reliability growth testing is more centered around prediction and helping software teams understand and gauge how reliable their system is going to be and where problems exist while RDC is better at gauging if the team is meeting their reliability goals and if the system is acceptable based on their failure metrics.  They also differ in that both utalize different methods to evaluate how acceptable a SUT is in that RDC accounts for different risk thresholds (producer and customer) whereas reliability growth testing simply predicts future failures and can be directly compared against a target MTTF, failure rate or other similar metric.  A small list is presented below.
+
+Similarity
+* Both are used to understand and gauge the reliability of a software system
+* Both rely on a target failure rate or MTTF
+
+Differences
+* RDC checks to see if a SUT is achieving it's failure rate while reliability growth testing is more focused on prediction of future failures
+* RDC uses risk profiles to gauge success while reliability growth testing provides predictions based on a model's output
