@@ -24,7 +24,7 @@ The top two models using C-SFRAT were Discrete Weibull type III and Geometric, b
 
 Results and Statistics
 | Model   | MTTF| Failure Rate|
-|-----------------|
+|-----------------|---|---|
 | Data                |   31/92 = 0.337 |    a |
 | Discrete Weibull type III              |  a | |
 | Geometric               |   | a|
