@@ -15,7 +15,7 @@ In this assignment the team explored and learned about relability testing by pra
 
 # Assessment Using Reliability Growth Testing 
 
-The team used both the C-SFRAT and SRTAT programs to generate reliability results and found that C-SFRAT was the better choice.  While both were easy to use C-SFRAT did not have any issues on startup whereas SRTAT required that the csv file be reformatted to a "txt" and it also provided far fewer choices for model selection and so C-SFRAT was used.
+The team used both the C-SFRAT and SRTAT programs to generate reliability results and found that C-SFRAT was the better choice because it was easier to use.  While both were easy to use C-SFRAT did not have any issues on startup whereas SRTAT required that the csv file be reformatted to a "txt".  It was also noted that SRTAT did not work and had multiple errors when running such as "Can't load AMD 64-bit.dll on a IA 32-bit platform" and other such errors despite selecting the correct platform and even trying different platforms (32 and 64 bit windows).
 
 
 ## Result of model comparison
@@ -30,7 +30,44 @@ Results and Statistics
 | Geometric                  |  a            | a|
 
 ## Result of range analysis
-XYZ
+In order to select the best range the team used the arithmetical mean test to select which subset of data has an increasing reliability, as reliability models should only be used on data where the overall reliability is increasing as testing continues.  By plotting the time interval and cumulative errors and then calculating the inter-failure time assuming an even distribution amoungst each interval it is very obvious when the reliability growth increases or decreases.  As can be seen in the table below the reliabilty growth increaes from 1-18, after which is decreases and then eventually increases again, so for this assignment the subset of data selected is from 1-18.
+
+| Time Interval | Cumulative Failure Count | Arithmetical mean|
+|--|--|--|
+|1| 2 |1|
+|2|13|0.17|
+|3|15|0.21|
+|4|19|0.22|
+|5|22|0.24|
+|6|23|0.27|
+|7|24|0.30|
+|8|26|0.32|
+|9|30|0.31|
+|10|30|0.34|
+|11|34|0.33|
+|12|35|0.35|
+|13|38|0.35|
+|14|38|0.38|
+|15|39|0.39|
+|16|40|0.41|
+|17|42|0.41|
+|18|43|0.43|
+|19|51|0.38|
+|20|60|0.34|
+|21|66|0.32|
+|22|73|0.31|
+|23|77|0.30|
+|24|80|0.30|
+|25|80|0.32|
+|26|84|0.31|
+|27|85|0.32|
+|28|85|0.33|
+|29|87|0.34|
+|30|89|0.34|
+|31|92|0.34|
+
+
+
 
 ## Plots for failure rate
 and reliability of the SUT for the test data provided
