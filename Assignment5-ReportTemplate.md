@@ -22,6 +22,8 @@ The team utilized both the C-SFRAT and SRTAT programs to generate reliability ou
 ## Result of model comparison
 Of the models assessed using C-SFRAT, the top two were the Discrete Weibull type III and Geometric model, both using the covariance F. To determine the optimal models, all models with all covariates were executed, and the two models with the lowest AIC (Akaike information criterion) and BIC (Bayesian information criterion) values were chosen.  The rationale for utilizing AIC and BIC, instead of solely relying on SSE (sum of squared estimate of errors) or PSSE (predictive sum of squares error), stems from their suitability for model selection. Both AIC and BIC are explicitly tailored for this purpose, taking into account the complexity of the model, a feature SSE and PSSE lacks (AIC and BIC penalize for model complexity, so there is less chance of overfitting).  The distinction between AIC and BIC is in their treatment of model complexity. BIC applies a more stringent penalty for model complexity, leading it to favor simpler models over AIC. For a more thorough understanding of the contrast between AIC and BIC, refer to this [link](https://vitalflux.com/aic-vs-bic-for-regression-models-formula-examples/).
 
+The AIC for Discrete Weibull type III and thet Geometric model were 122.199 and 125.323 respectively while the BIC was 127.935 and 129.625 for the Discrete Weibull type III and thet Geometric model respectively.
+
 Results and Statistics
 | Model   | MTTF| Failure Rate|
 |-----------------|---|---|
@@ -123,18 +125,7 @@ Disadvantages
 2. **Compatibility Issues**: The Excel macros and programming in the spreadsheets was dated and our group experienced compatibility issues with the spreadsheet with the newer versions of the Microsoft Excel on macOS. 
 
 3. **Possibility of Incorrect Parameters**: The decision to accept or reject a system depends on the risk thresholds set by the producer. Incorrectly set parameters might lead to wrong decisions such as rejecting a satisfactory system or accepting an unsatisfactory one.
-# Assessment Using Reliability Demonstration Chart 
-
-# 
 
 # Comparison of Results
 
 # Discussion on Similarity and Differences of the Two Techniques
-
-# How the team work/effort was divided and managed
-
-# 
-
-# Difficulties encountered, challenges overcome, and lessons learned
-
-# Comments/feedback on the lab itself
