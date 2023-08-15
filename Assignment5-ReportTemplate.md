@@ -66,9 +66,6 @@ In order to select the best range the team used the arithmetical mean test to se
 |30|89|0.34|
 |31|92|0.34|
 
-
-
-
 ## Plots for failure rate
 and reliability of the SUT for the test data provided
 
@@ -77,6 +74,17 @@ and reliability of the SUT for the test data provided
 Given a target failure rate, you can use the models to predict 
 
 ## Discussion on the Advantages and Disadvantages of Reliability Growth Analysis
+Advantages
+* Reliabilty growth analysis is extremely useful for long term planning with respect to how much money or resources should be spent on testing and how it will reflect on the amount of future defects detected.
+* It's a very easy analysis to do as it only requires metadata from the testing data.
+* If there is enough context it can pinpoint where problematic areas are.  For instance if reliabilty sudden becomes much worse and it's specific to when a certain feature was rolled out you can quantify how impactful that extra feature was in terms of how it affects MTTF or other reliability metrics.
+* It provides validation to the developers becasue if their reliability is going up and the mean time between failures is increasing the team knows they are doing a good job.
+
+Disadvantages
+* Requires extremely good data.  Often the data is not helpful without more context.  For example in this assignemnt the reliability sudden dropped near time interval 18 and without context it is much more difficult to interpret results
+* Relies on models and statistical assumptions which may or may not be true
+* Is very limited if there is not enough data.  Without a significant amount of data it cannot even be performed.
+* Software is dynamic and changes constantly, so while reliability growth analysis is import it needs to be reanalzed every time there is a significant change to the software.
 
 
 # Assessment Using Reliability Demonstration Chart 
