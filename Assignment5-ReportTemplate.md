@@ -30,12 +30,14 @@ Results and Statistics
 | Data                       | 31/92 = 0.337 |    92/31 = 2.968 |
 | Discrete Weibull type III (all data)  | 31/92 = 0.337 |    92/31 = 2.968 |
 | Geometric (all data)                  |  31/92 = 0.337 |    92/31 = 2.968 |
-| Discrete Weibull type III (subset)  |  31/92.922 = 0.334            | 92.922/31 = 3.00 |
+| Discrete Weibull type III (subset, effort per interval = 36)  |  31/92.922 = 0.334            | 92.922/31 = 2.997 |
 | Discrete Weibull type III (subset, effort per interval = 0)  |  31/50.074 = 0.619            | 92.922/31 = 1.615 |
 | Geometric (subset, effort per interval = 0)                  |  31/47.151 =  0.657           | 47.151/31 = 1.521|
 
 ## Result of range analysis
 To determine the optimal range, the team employed the arithmetic mean test. This test helped identify a subset of data with consistently improving reliability. As mentioned in the lecture notes, it's important to apply reliability models exclusively to data showing a consistent increase in reliability during testing.  The approach involved creating a graph displaying time intervals and cumulative errors. By calculating inter-failure times with the assumption of an even distribution across each interval, it became clear when reliability growth was on the rise or decline.  The data table below demonstrates this pattern. Reliability growth is evident from intervals 1 to 18, followed by a decline from intervals 19 to 24, and a subsequent increase from intervals 25 to 31. Therefore, for this task, the chosen data subset comprises intervals 1 to 18 and 25 to 31. Unfortunately, the C-SFRAT software lacks the flexibility to analyze subsets that don't initiate from time interval 0 due to several errors encountered [here]().
+
+The team also manipulated the "effort per interval" to try and match the models using the subset of data (intervals 1-18) with the full set.  This was only achieved with the Discrete Weibull type III and with an effort per interval of 36.  The Geometric model never obtained similar results to the actual full set.  As mentioned in the software tool guide found [here](https://www.sciencedirect.com/science/article/pii/S2352711021001588), this hyperparameter can be interpreted as "the testing schedule, but can also be used to predict field defect or vulnerability discovery in the case where covariates correspond to the intensity of various types of attack leveled against a system in its operational environment".  Without more information on the hypothetical test data and why there was a sudden spike in unreliability, it's not meaningful to interpret why the effort per interval would be 36 and if that model can be used for future predictions.
 
 | Time Interval | Cumulative Failure Count | Arithmetical mean|
 |--|--|--|
@@ -92,22 +94,33 @@ Intensity Graph - Subset with increasing Reliabilty
 
 <img src="https://github.com/seng637-summer/seng637-a5-chd-vicis/blob/main/media/subset_i.png" alt="Intensity Graph - Subset with increasing Reliabilty" width="641" /><br>
 
-## Discussion on Decision Making given a Target Failure Rate
-When a business is developing and testing software they often have a target failure rate that they deem acceptable.  By using reliability growth analysis the testing team will be able to help the business understand if it's reaching or coming in below it's target failure rate and if it isn't then the business can take corrective action to fix it.  Reliability growth analysis also helps the business understand how impactful certain software changes are and what to expect for future changes based on their reliability growth analysis which is extremely valuable for budgetting.  For example software companies often add extra features, many of which are similar in size and scope.  When deciding on how much testing is needed to maintain their acceptable failure rate the business can look back at previous data and their existing growth analysis to see if it's a worth while feature.  In short, reliability growth analysis is vital for businesses because it helps them plan and budget how much testing is required and it helps them pinpoint where the most problems are occuring and which areas are contributing to a high failure rate.
 
+MVF Graph - Subset with increasing Reliabilty and effort per interval of 36
+
+<img src="https://github.com/seng637-summer/seng637-a5-chd-vicis/blob/main/media/subset-effort.png" alt="MVF Graph - Subset with increasing Reliabilty and effort per interval of 36" width="641" /><br>
+
+
+Intensity Graph - Subset with increasing Reliabilty and effort per interval of 36
+
+<img src="https://github.com/seng637-summer/seng637-a5-chd-vicis/blob/main/media/subset-effort-i.png" alt="Intensity Graph - Subset with increasing Reliabilty and effort per interval of 36" width="641" /><br>
+
+
+
+## Discussion on Decision Making given a Target Failure Rate
+When businesses are in the process of software development and testing, they often establish a target failure rate that they consider acceptable. By utilizing reliability growth analysis, testers can assist the business in determining whether it is achieving or falling below its desired failure rate. If the target isn't being met, the business can take corrective measures to address the issue. Reliability growth analysis also provides insights into the impact of specific software changes, guiding the business in understanding the implications of such changes for future modifications. This is particularly valuable for budgeting purposes. For example, software companies frequently introduce new features of varying sizes and scopes. When deciding the extent of testing required to maintain an acceptable failure rate, the business can refer to past data and existing growth analysis to assess the value of each feature. In essence, reliability growth analysis is indispensable for businesses as it aids in planning, budgeting, pinpointing problematic areas, and reducing a high failure rate.
 
 ## Discussion on the Advantages and Disadvantages of Reliability Growth Analysis
 Advantages
-* Reliabilty growth analysis is extremely useful for long term planning with respect to how much money or resources should be spent on testing and how it will reflect on the amount of future defects detected.
-* It's a very easy analysis to do as it only requires metadata from the testing data.
-* If there is enough context it can pinpoint where problematic areas are.  For instance if reliabilty sudden becomes much worse and it's specific to when a certain feature was rolled out you can quantify how impactful that extra feature was in terms of how it affects MTTF or other reliability metrics.
-* It provides validation to the developers becasue if their reliability is going up and the mean time between failures is increasing the team knows they are doing a good job.
+* Reliability growth analysis offers significant utility for long-term planning, helping businesses allocate resources and funds for testing while predicting its impact on future defect detection.
+* It's a straightforward analysis, relying solely on metadata from testing data.  It's fast to compute generally speaking.
+* With sufficient context, it can identify problematic areas. For instance, if reliability suddenly deteriorates coinciding with the rollout of a particular feature, the analysis can quantify the feature's impact on metrics like MTTF or other reliability measures.
+* It validates developers' efforts; increasing reliability and extended mean time between failures reflect the team's effective work.  This helps management gauge if their team is performing.
 
 Disadvantages
-* Requires extremely good data.  Often the data is not helpful without more context.  For example in this assignemnt the reliability sudden dropped near time interval 18 and without context it is much more difficult to interpret results
-* Relies on models and statistical assumptions which may or may not be true
-* Is very limited if there is not enough data.  Without a significant amount of data it cannot even be performed.
-* Software is dynamic and changes constantly, so while reliability growth analysis is import it needs to be reanalzed every time there is a significant change to the software.
+* High-quality data is essential. Often, data lacks usefulness without additional context. In this assignment, for instance, reliability dropped suddenly around time interval 18, which is challenging to interpret without context and the true MTTF may be a subject of debate. 
+* Reliability growth analysis relies on models and statistical assumptions, which may or may not hold true.
+* It becomes severely limited with insufficient data; a substantial dataset is a prerequisite for meaningful analysis.  In this assignment there was only 31 intervals when ideally there should be far more.
+* Software is dynamic and constantly evolving. While reliability growth analysis is crucial, it must be reevaluated whenever significant software changes occur.
 
 # Reliability Demonstration Charts
 
@@ -142,5 +155,6 @@ Disadvantages
 3. **Possibility of Incorrect Parameters**: The decision to accept or reject a system depends on the risk thresholds set by the producer. Incorrectly set parameters might lead to wrong decisions such as rejecting a satisfactory system or accepting an unsatisfactory one.
 
 # Comparison of Results
+
 
 # Discussion on Similarity and Differences of the Two Techniques
