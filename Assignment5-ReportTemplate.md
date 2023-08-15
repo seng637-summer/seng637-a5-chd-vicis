@@ -73,7 +73,7 @@ The team also manipulated the "effort per interval" to try and match the models 
 |30|89|0.34|
 |31|92|0.34|
 
-## Plots for failure rate
+## Plots for Failure Rate and Reliability of the SUT for the Test Data Provided
 
 MVF Graph - Full Set
 
