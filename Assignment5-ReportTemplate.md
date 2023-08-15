@@ -87,7 +87,7 @@ Disadvantages
 * Is very limited if there is not enough data.  Without a significant amount of data it cannot even be performed.
 * Software is dynamic and changes constantly, so while reliability growth analysis is import it needs to be reanalzed every time there is a significant change to the software.
 
-### Reliability Demonstration Charts
+# Reliability Demonstration Charts
 
 1. Upon evaluation of the system's reliability metrics, the threshold for an acceptable Mean Time To Failure (MTTF) was delineated. We employed a trial-and-error method to iteratively adjust the Failure Input Output (FIO) to ascertain this. After multiple iterations, it was ascertained that the FIO aligned precisely at a ratio of 750/31, translating to approximately 24.194 failures per interval. Consequently, this results in an MTTF of 0.0413, establishing our operational reliability benchmark.
 
