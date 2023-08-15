@@ -26,8 +26,8 @@ Results and Statistics
 | Model   | MTTF| Failure Rate|
 |-----------------|---|---|
 | Data                |   31/92 = 0.337 |    a |
-| Discrete Weibull type III              |  a | |
-| Geometric               |   | a|
+| Discrete Weibull type III              |  a | a |
+| Geometric               |  a | a|
 
 ## Result of range analysis
 XYZ
