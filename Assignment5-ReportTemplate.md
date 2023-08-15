@@ -30,9 +30,9 @@ Results and Statistics
 | Data                       | 31/92 = 0.337 |    92/31 = 2.968 |
 | Discrete Weibull type III (all data)  | 31/92 = 0.337 |    92/31 = 2.968 |
 | Geometric (all data)                  |  31/92 = 0.337 |    92/31 = 2.968 |
-| Discrete Weibull type III (subset, effort per interval = 36)  |  31/92.922 = 0.334            | 92.922/31 = 3.00 |
-| Discrete Weibull type III (subset, effort per interval = 0)  |  31/92.922 = 0.334            | 92.922/31 = 3.00 |
-| Geometric (subset, effort per interval = 0)                  |  a            | a|
+| Discrete Weibull type III (subset)  |  31/92.922 = 0.334            | 92.922/31 = 3.00 |
+| Discrete Weibull type III (subset, effort per interval = 0)  |  31/50.074 = 0.619            | 92.922/31 = 1.615 |
+| Geometric (subset, effort per interval = 0)                  |  31/47.151 =  0.657           | 47.151/31 = 1.521|
 
 ## Result of range analysis
 To determine the optimal range, the team employed the arithmetic mean test. This test helped identify a subset of data with consistently improving reliability. As mentioned in the lecture notes, it's important to apply reliability models exclusively to data showing a consistent increase in reliability during testing.  The approach involved creating a graph displaying time intervals and cumulative errors. By calculating inter-failure times with the assumption of an even distribution across each interval, it became clear when reliability growth was on the rise or decline.  The data table below demonstrates this pattern. Reliability growth is evident from intervals 1 to 18, followed by a decline from intervals 19 to 24, and a subsequent increase from intervals 25 to 31. Therefore, for this task, the chosen data subset comprises intervals 1 to 18 and 25 to 31. Unfortunately, the C-SFRAT software lacks the flexibility to analyze subsets that don't initiate from time interval 0 due to several errors encountered [here]().
