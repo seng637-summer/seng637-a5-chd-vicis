@@ -25,9 +25,9 @@ The top two models using C-SFRAT were Discrete Weibull type III and Geometric, b
 Results and Statistics
 | Model   | MTTF| Failure Rate|
 |-----------------|---|---|
-| Data                |   31/92 = 0.337 |    a |
-| Discrete Weibull type III              |  a | a |
-| Geometric               |  a | a|
+| Data                       | 31/92 = 0.337 |    92/31 = 2.968 |
+| Discrete Weibull type III  |  a            | a |
+| Geometric                  |  a            | a|
 
 ## Result of range analysis
 XYZ
@@ -36,8 +36,8 @@ XYZ
 and reliability of the SUT for the test data provided
 
 
-## Discussion on Decision Making given a Target Failure  Rate
-
+## Discussion on Decision Making given a Target Failure Rate
+Given a target failure rate, you can use the models to predict 
 
 ## Discussion on the Advantages and Disadvantages of Reliability Growth Analysis
 
