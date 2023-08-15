@@ -80,11 +80,17 @@ MVF Graph - Full Set
 
 Intensity Graph - Full Set
 
+<img src="https://github.com/seng637-summer/seng637-a5-chd-vicis/blob/main/media/fullset_i.png" alt="Intensity Graph - Full Set" width="641" /><br>
+
+
 MVF Graph - Subset with increasing Reliabilty
+
+<img src="https://github.com/seng637-summer/seng637-a5-chd-vicis/blob/main/media/subset.png" alt="MVF Graph - Subset with increasing Reliabilty" width="641" /><br>
+
 
 Intensity Graph - Subset with increasing Reliabilty
 
-
+<img src="https://github.com/seng637-summer/seng637-a5-chd-vicis/blob/main/media/subset_i.png" alt="Intensity Graph - Subset with increasing Reliabilty" width="641" /><br>
 
 ## Discussion on Decision Making given a Target Failure Rate
 When a business is developing and testing software they often have a target failure rate that they deem acceptable.  By using reliability growth analysis the testing team will be able to help the business understand if it's reaching or coming in below it's target failure rate and if it isn't then the business can take corrective action to fix it.  Reliability growth analysis also helps the business understand how impactful certain software changes are and what to expect for future changes based on their reliability growth analysis which is extremely valuable for budgetting.  For example software companies often add extra features, many of which are similar in size and scope.  When deciding on how much testing is needed to maintain their acceptable failure rate the business can look back at previous data and their existing growth analysis to see if it's a worth while feature.  In short, reliability growth analysis is vital for businesses because it helps them plan and budget how much testing is required and it helps them pinpoint where the most problems are occuring and which areas are contributing to a high failure rate.
